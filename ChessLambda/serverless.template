@@ -1,0 +1,31 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Transform" : "AWS::Serverless-2016-10-31",
+  "Description" : "AWS Serverless API that exposes an endpoint to get a good chess move from fen",
+  "Parameters" : {
+  },
+  "Resources" : {
+    "GetMove" : {
+      "Type" : "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "ChessLambda::ChessLambda.Functions::GetMove",
+        "Runtime": "dotnetcore2.1",
+        "CodeUri": "",
+        "Description": "Function to get a chess move",
+        "MemorySize": 1600,
+        "Timeout": 90,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ],
+        "Events": {
+          "PutResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/move",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    }
+  }
+}
