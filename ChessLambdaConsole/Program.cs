@@ -1,14 +1,11 @@
-using ChessLambda;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ChessLambda;
 using System;
 
-namespace ChessLambdaTests
+namespace ChessLambdaConsole
 {
-    [TestClass]
-    public class UnitTest1
+    class Program
     {
-        [TestMethod]
-        public void TestMethod1()
+        static void Main(string[] args)
         {
             BestMoveFinder bmf = new BestMoveFinder();
             var move = bmf.FindBestMove("8/1q2k3/8/8/8/1Q6/8/4K3 b - - 0 1");

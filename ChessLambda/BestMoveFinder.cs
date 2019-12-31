@@ -60,7 +60,6 @@ namespace ChessLambda
                         alpha = value;
                         if (MaxDepth == depth)
                         {
-                            Console.WriteLine(value);
                             _moveToMake.FromX = piece.X;
                             _moveToMake.FromY = piece.Y;
                             _moveToMake.DestX = point.X;

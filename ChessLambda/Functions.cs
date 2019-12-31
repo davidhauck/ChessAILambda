@@ -34,8 +34,6 @@ namespace ChessLambda
         /// <returns>The list of blogs</returns>
         public APIGatewayProxyResponse GetMove(APIGatewayProxyRequest request, ILambdaContext context)
         {
-            Console.WriteLine("here");
-
             var fen = request.QueryStringParameters?["fen"];
             if (fen == null)
             {
@@ -43,9 +41,6 @@ namespace ChessLambda
             }
             BestMoveFinder bmf = new BestMoveFinder();
             var move = bmf.FindBestMove(fen);
-
-            Console.WriteLine("HEADERS: ");
-            Console.WriteLine(JsonConvert.SerializeObject(request));
 
             string origin;
             if (request.Headers.ContainsKey("Origin"))
@@ -60,9 +55,6 @@ namespace ChessLambda
             {
                 origin = "https://dhauck.com";
             }
-
-            Console.WriteLine(origin);
-
             return ResponseMapper.CreateResponse(origin, move);
         }
     }
