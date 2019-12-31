@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
@@ -12,8 +12,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FenParser">
-      <HintPath>lib\FenParser.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\FenParserStandard\FenParserStandard.csproj" />
   </ItemGroup>
 </Project>
