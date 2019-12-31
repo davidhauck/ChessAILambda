@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChessLambda
 {
-    class BestMoveFinder
+    public class BestMoveFinder
     {
         const int MaxDepth = 4;
 
